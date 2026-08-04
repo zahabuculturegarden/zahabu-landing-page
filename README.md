@@ -1,2 +1,2 @@
-# zahabu-landing-page
-Simple landing page for Zahabu Culture Garden
+# santuri-bookings
+dummy site to host calendly embeds for space bookings
