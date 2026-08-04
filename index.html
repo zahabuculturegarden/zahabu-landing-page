@@ -240,72 +240,15 @@
 
         let w, h;
 
-        function resize() {
-            w = canvas.width = window.innerWidth;
-            h = canvas.height = window.innerHeight;
+        function resize(){
+
+            w = canvas.width = innerWidth;
+            h = canvas.height = innerHeight;
+
         }
 
-        window.addEventListener("resize", resize);
+        addEventListener("resize", resize);
         resize();
-
-        let t = 0;
-
-        // Harmonic ratios
-        let a = 3;
-        let b = 2;
-
-        function draw() {
-
-            ctx.clearRect(0, 0, w, h);
-
-            ctx.save();
-
-            ctx.translate(w / 2, h / 2);
-
-            ctx.strokeStyle = "rgba(0,0,0,0.05)";
-            ctx.lineWidth = 0.8;
-
-            ctx.beginPath();
-
-            const scale = Math.min(w, h) * 0.28;
-
-            for (let i = 0; i <= 2500; i++) {
-
-                const p = (i / 2500) * Math.PI * 2;
-
-                const x =
-                    Math.sin(a * p + t) * scale;
-
-                const y =
-                    Math.sin(b * p) * scale;
-
-                if (i === 0) {
-
-                    ctx.moveTo(x, y);
-
-                } else {
-
-                    ctx.lineTo(x, y);
-
-                }
-
-            }
-
-            ctx.stroke();
-
-            ctx.restore();
-
-            // VERY slow evolution
-            t += 0.0008;
-
-            requestAnimationFrame(draw);
-
-        }
-
-        draw();
-
-
-        // Every 40 seconds choose a new harmonic ratio
 
         const ratios = [
 
@@ -319,15 +262,97 @@
 
         ];
 
-        setInterval(() => {
+        let ratio = 0;
 
-            const next =
-                ratios[Math.floor(Math.random()*ratios.length)];
+        let progress = 0;
 
-            a = next[0];
-            b = next[1];
+        let fade = 0;
 
-        }, 40000);
+        let phase = 0;
+
+        function drawCurve(a,b,amount,alpha){
+
+            ctx.save();
+
+            ctx.translate(w/2,h/2);
+
+            ctx.beginPath();
+
+            const scale = Math.min(w,h)*0.30;
+
+            const max = Math.floor(amount*3000);
+
+            for(let i=0;i<=max;i++){
+
+                const t=(i/3000)*Math.PI*2;
+
+                const x=Math.sin(a*t+phase)*scale;
+                const y=Math.sin(b*t)*scale;
+
+                if(i===0){
+
+                    ctx.moveTo(x,y);
+
+                }else{
+
+                    ctx.lineTo(x,y);
+
+                }
+
+            }
+
+            ctx.strokeStyle=`rgba(0,0,0,${alpha})`;
+
+            ctx.lineWidth=.8;
+
+            ctx.stroke();
+
+            ctx.restore();
+
+        }
+
+        function animate(){
+
+            ctx.clearRect(0,0,w,h);
+
+            const current = ratios[ratio];
+
+            drawCurve(
+
+                current[0],
+                current[1],
+
+                progress,
+
+                0.08*(1-fade)
+
+            );
+
+            progress += .002;
+
+            phase += .0003;
+
+            if(progress>=1){
+
+                fade += .004;
+
+            }
+
+            if(fade>=1){
+
+                fade = 0;
+
+                progress = 0;
+
+                ratio = (ratio+1)%ratios.length;
+
+            }
+
+            requestAnimationFrame(animate);
+
+        }
+
+        animate();
     </script>
 
     </body>
