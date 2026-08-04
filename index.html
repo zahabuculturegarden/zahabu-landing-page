@@ -123,13 +123,13 @@
 
             color:#777;
 
-            margin-top:500px;
+            margin-top:120px;
 
         }
 
         /* ---------- MOBILE ---------- */
 
-        @media(max-width:768px){
+        /* @media(max-width:768px){
 
         .hero{
 
@@ -186,7 +186,7 @@
 
         }
 
-        }
+        } */
 
         #topography {
 
@@ -201,6 +201,37 @@
             z-index:0;
 
             pointer-events:none;
+
+        }
+
+        html,
+        body{
+
+            width:100%;
+
+            min-height:100%;
+
+            overflow-x:hidden;
+
+            background:#fff;
+
+        }
+
+        canvas{
+
+            display:block;
+
+        }
+
+        .hero,
+        .about,
+        body,
+        main,
+        footer{
+
+            position:relative;
+
+            z-index:1;
 
         }
 
@@ -263,8 +294,8 @@
 
     </footer>
 
-    <!-- 
-    <script>
+  
+    <!-- <script>
 
     const canvas = document.getElementById("topography");
     const ctx = canvas.getContext("2d");
@@ -394,7 +425,7 @@
     drawContours();
 
 
-    </script>  -->
+    </script>   -->
 
     </body>
 </html>
