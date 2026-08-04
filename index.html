@@ -1,400 +1,400 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Zahabu Culture Garden</title>
+    <title>Zahabu Culture Garden</title>
 
-<link rel="icon" href="images/favicon.ico">
+    <link rel="icon" href="images/favicon.ico">
 
-<style>
+    <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
 
-@font-face {
-    font-family: "Futura";
-    src: url("fonts/Futura-Regular.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
+        @font-face {
+            font-family: "Futura";
+            src: url("fonts/Futura-Regular.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
 
-button,
-input,
-select,
-textarea{
-    font-family:"Futura", sans-serif;
-}
+        button,
+        input,
+        select,
+        textarea{
+            font-family:"Futura", sans-serif;
+        }
 
-html{
-    scroll-behavior:smooth;
-}
+        html{
+            scroll-behavior:smooth;
+        }
 
-body{
-    font-family:"JetBrains Mono", monospace;
-    background:#ffffff;
-    color:#222;
+        body{
+            font-family:"Futura", monospace;
+            background:#ffffff;
+            color:#222;
 
-    font-size: 12px;
-}
+            font-size: 12px;
+        }
 
-/* ---------- HERO ---------- */
+        /* ---------- HERO ---------- */
 
-.hero{
+        .hero{
 
-    height:40vh;
+            height:40vh;
 
-    min-height:300px;
+            min-height:300px;
 
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(255,255,255,1) 0%,
-            rgba(255,255,255,0.95) 45%,
-            rgba(255,255,255,0.75) 100%
-        );
+            background:
+                linear-gradient(
+                    to bottom,
+                    rgba(255,255,255,1) 0%,
+                    rgba(255,255,255,0.95) 45%,
+                    rgba(255,255,255,0.75) 100%
+                );
 
 
-    display:flex;
+            display:flex;
 
-    justify-content:center;
+            justify-content:center;
 
-    align-items:center;
+            align-items:center;
 
-    text-align:left;
+            text-align:left;
 
-    color:#111;
+            color:#111;
 
-    padding:30px;
+            padding:30px;
 
-}
+        }
 
-.hero-content{
+        .hero-content{
 
-    max-width:800px;
+            max-width:800px;
 
-}
+        }
 
-.logo{
+        .logo{
 
-    width:100px;
+            width:100px;
 
-    margin-top: 200px;
+            margin-top: 200px;
 
-    text-align:left;
+            text-align:left;
 
-}
+        }
 
 
-/* ---------- ABOUT ---------- */
+        /* ---------- ABOUT ---------- */
 
-.about{
-    text-align: left;
-    max-width:700px;
-    margin-right:auto;
-    margin-left:0;
+        .about{
+            text-align: left;
+            max-width:700px;
+            margin-right:auto;
+            margin-left:0;
 
-    padding-left:40px;
-}
+            padding-left:40px;
+        }
 
-.about p{
-    line-height:1.4;
+        .about p{
+            line-height:1.4;
 
-    margin-bottom:25px;
+            margin-bottom:25px;
 
-}
+        }
 
-.contact p{
-    line-height:0.5;
-}
+        .contact p{
+            line-height:0.5;
+        }
 
-/* ---------- FOOTER ---------- */
+        /* ---------- FOOTER ---------- */
 
-footer{
+        footer{
 
-    text-align:center;
+            text-align:center;
 
-    padding:60px 20px;
+            padding:60px 20px;
 
-    color:#777;
+            color:#777;
 
-    margin-top:500px;
+            margin-top:500px;
 
-}
+        }
 
-/* ---------- MOBILE ---------- */
+        /* ---------- MOBILE ---------- */
 
-@media(max-width:768px){
+        @media(max-width:768px){
 
-.hero{
+        .hero{
 
-height:55vh;
+        height:55vh;
 
-}
+        }
 
-.hero h1{
+        .hero h1{
 
-font-size:2.2rem;
+        font-size:2.2rem;
 
-}
+        }
 
-.hero p{
+        .hero p{
 
-font-size:1rem;
+        font-size:1rem;
 
-}
+        }
 
-.logo{
+        .logo{
 
-width:150px;
+        width:150px;
 
-}
+        }
 
 
-.footer-logo{
-    width:30px;
-    margin-bottom:15px;
-    opacity:.9;
-}
+        .footer-logo{
+            width:30px;
+            margin-bottom:15px;
+            opacity:.9;
+        }
 
-footer{
+        footer{
 
-    text-align:center;
+            text-align:center;
 
-    padding:50px 20px;
+            padding:50px 20px;
 
-    color:#777;
+            color:#777;
 
-    border-top:1px solid #ddd;
+            border-top:1px solid #ddd;
 
-    margin-top:20px;
+            margin-top:20px;
 
-    margin-bottom: 20px;
+            margin-bottom: 20px;
 
-}
+        }
 
-footer p{
+        footer p{
 
-    margin:0;
+            margin:0;
 
-    font-size:.95rem;
+            font-size:.95rem;
 
-}
+        }
 
-}
+        }
 
-#topography {
+        #topography {
 
-    position: fixed;
+            position: fixed;
 
-    inset:0;
+            inset:0;
 
-    width:100%;
+            width:100%;
 
-    height:100%;
+            height:100%;
 
-    z-index:0;
+            z-index:0;
 
-    pointer-events:none;
+            pointer-events:none;
 
-}
+        }
 
 
-</style>
+    </style>
 
 </head>
 
 <body>
 
-<canvas id="topography"></canvas>
+    <canvas id="topography"></canvas>
 
-<header class="hero">
+    <header class="hero">
 
-<div class="hero-content">
+        <div class="hero-content">
 
-<img class="logo" src="images/logo.png" alt="Zahabu Culture Garden">
+        <img class="logo" src="images/logo.png" alt="Zahabu Culture Garden">
 
-<!-- <h1>Zahabu Culture Garden</h1> -->
+        <!-- <h1>Zahabu Culture Garden</h1> -->
 
-<section class="about">
-<p>
-Created in 2026, Zahabu Culture Garden is a new space dedicated to culture, creativity and community in the building.
-</p>
+            <section class="about">
+            <p>
+            Created in 2026, Zahabu Culture Garden is a new space dedicated to culture, creativity and community in the building.
+            </p>
 
-<p>
-Emerging from the creative voices at the Mall, Zahabu was designed as a hybrid space where music, food, skate, broadcast and creative practice intersect. The space provides a platform for experimentation, collaboration and cultural exchange.
-</p>
+            <p>
+            Emerging from the creative voices at the Mall, Zahabu was designed as a hybrid space where music, food, skate, broadcast and creative practice intersect. The space provides a platform for experimentation, collaboration and cultural exchange.
+            </p>
 
-<p>
-At its core, Zahabu exists as a community-driven cultural and creative playground where music, atmosphere, and people evolve together. It is a place that prioritizes individual expression as wll as intercultural and intergenerational dialogue through the arts. 
-</p>
+            <p>
+            At its core, Zahabu exists as a community-driven cultural and creative playground where music, atmosphere, and people evolve together. It is a place that prioritizes individual expression as wll as intercultural and intergenerational dialogue through the arts. 
+            </p>
 
-<div class="contact">
-    <p>
-    The Mall, Rooftop, Westlands, Nairobi<br><br>
+            <div class="contact">
+                <p>
+                The Mall, Rooftop, Westlands, Nairobi<br><br>
 
-    <a href="mailto:info@zahabu.co.ke">
-        info@zahabu.co.ke
-    </a>
-    </p>
-</div>
+                <a href="mailto:info@zahabu.co.ke">
+                    info@zahabu.co.ke
+                </a>
+                </p>
+            </div>
 
-</p>
+            </p>
 
-</section>
+            </section>
 
 
-</div>
+        </div>
 
-</header>
+    </header>
 
-<main class="container">
+    <main class="container">
 
-</main>
+    </main>
 
-<footer>
+    <footer>
 
-        © 2026 Zahabu Culture Garden
+            © 2026 Zahabu Culture Garden
 
-</footer>
+    </footer>
 
-<!-- 
-<script>
+    <!-- 
+    <script>
 
-const canvas = document.getElementById("topography");
-const ctx = canvas.getContext("2d");
+    const canvas = document.getElementById("topography");
+    const ctx = canvas.getContext("2d");
 
-let w, h;
+    let w, h;
 
-function resize(){
+    function resize(){
 
-    w = canvas.width = window.innerWidth;
-    h = canvas.height = window.innerHeight;
-
-}
-
-window.addEventListener("resize", resize);
-resize();
-
-const particles = [];
-
-const COUNT = 900;
-
-const mouse = {
-    x:-1000,
-    y:-1000
-};
-
-window.addEventListener("mousemove",e=>{
-
-    mouse.x=e.clientX;
-    mouse.y=e.clientY;
-
-});
-
-class Particle{
-
-    constructor(){
-
-        this.reset();
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
 
     }
 
-    reset(){
+    window.addEventListener("resize", resize);
+    resize();
 
-        this.x=Math.random()*w;
-        this.y=Math.random()*h;
+    const particles = [];
 
-        this.life=Math.random()*300;
+    const COUNT = 900;
 
-    }
+    const mouse = {
+        x:-1000,
+        y:-1000
+    };
 
-    update(){
+    window.addEventListener("mousemove",e=>{
 
-        const dx=this.x-mouse.x;
-        const dy=this.y-mouse.y;
+        mouse.x=e.clientX;
+        mouse.y=e.clientY;
 
-        const dist=Math.sqrt(dx*dx+dy*dy);
+    });
 
-        const mouseAngle=Math.atan2(dy,dx);
+    class Particle{
 
-        const influence=Math.max(0,1-dist/250);
-
-        const angle=
-
-            Math.sin(this.y*0.004)+
-            Math.cos(this.x*0.004)+
-            influence*mouseAngle;
-
-        const length=1.2;
-
-        const nx=this.x+Math.cos(angle)*length;
-        const ny=this.y+Math.sin(angle)*length;
-
-        ctx.beginPath();
-
-        ctx.moveTo(this.x,this.y);
-
-        ctx.lineTo(nx,ny);
-
-        ctx.stroke();
-
-        this.x=nx;
-        this.y=ny;
-
-        this.life--;
-
-        if(
-            this.life<0 ||
-            this.x<0 ||
-            this.x>w ||
-            this.y<0 ||
-            this.y>h
-        ){
+        constructor(){
 
             this.reset();
 
         }
 
+        reset(){
+
+            this.x=Math.random()*w;
+            this.y=Math.random()*h;
+
+            this.life=Math.random()*300;
+
+        }
+
+        update(){
+
+            const dx=this.x-mouse.x;
+            const dy=this.y-mouse.y;
+
+            const dist=Math.sqrt(dx*dx+dy*dy);
+
+            const mouseAngle=Math.atan2(dy,dx);
+
+            const influence=Math.max(0,1-dist/250);
+
+            const angle=
+
+                Math.sin(this.y*0.004)+
+                Math.cos(this.x*0.004)+
+                influence*mouseAngle;
+
+            const length=1.2;
+
+            const nx=this.x+Math.cos(angle)*length;
+            const ny=this.y+Math.sin(angle)*length;
+
+            ctx.beginPath();
+
+            ctx.moveTo(this.x,this.y);
+
+            ctx.lineTo(nx,ny);
+
+            ctx.stroke();
+
+            this.x=nx;
+            this.y=ny;
+
+            this.life--;
+
+            if(
+                this.life<0 ||
+                this.x<0 ||
+                this.x>w ||
+                this.y<0 ||
+                this.y>h
+            ){
+
+                this.reset();
+
+            }
+
+        }
+
     }
 
-}
+    for(let i=0;i<COUNT;i++){
 
-for(let i=0;i<COUNT;i++){
+        particles.push(new Particle());
 
-    particles.push(new Particle());
+    }
 
-}
+    function animate(){
 
-function animate(){
+        ctx.fillStyle="rgba(255,255,255,0.05)";
+        ctx.fillRect(0,0,w,h);
 
-    ctx.fillStyle="rgba(255,255,255,0.05)";
+        ctx.strokeStyle="rgba(0,0,0,0.08)";
+        ctx.lineWidth=1;
+
+        particles.forEach(p=>p.update());
+
+        requestAnimationFrame(animate);
+
+    }
+
+    ctx.fillStyle="white";
     ctx.fillRect(0,0,w,h);
 
-    ctx.strokeStyle="rgba(0,0,0,0.08)";
-    ctx.lineWidth=1;
-
-    particles.forEach(p=>p.update());
-
-    requestAnimationFrame(animate);
-
-}
-
-ctx.fillStyle="white";
-ctx.fillRect(0,0,w,h);
-
-animate();
+    animate();
 
 
-drawContours();
+    drawContours();
 
 
-</script>  -->
+    </script>  -->
 
-</body>
+    </body>
 </html>
