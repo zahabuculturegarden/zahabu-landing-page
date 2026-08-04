@@ -127,66 +127,7 @@
 
         }
 
-        /* ---------- MOBILE ---------- */
-
-        /* @media(max-width:768px){
-
-        .hero{
-
-        height:55vh;
-
-        }
-
-        .hero h1{
-
-        font-size:2.2rem;
-
-        }
-
-        .hero p{
-
-        font-size:1rem;
-
-        }
-
-        .logo{
-
-        width:150px;
-
-        }
-
-
-        .footer-logo{
-            width:30px;
-            margin-bottom:15px;
-            opacity:.9;
-        }
-
-        footer{
-
-            text-align:center;
-
-            padding:50px 20px;
-
-            color:#777;
-
-            border-top:1px solid #ddd;
-
-            margin-top:20px;
-
-            margin-bottom: 20px;
-
-        }
-
-        footer p{
-
-            margin:0;
-
-            font-size:.95rem;
-
-        }
-
-        } */
+        
 
         #topography {
 
@@ -289,143 +230,105 @@
     </main>
 
     <footer>
-
             © 2026 Zahabu Culture Garden
-
     </footer>
 
   
-    <!-- <script>
+    <script>
+        const canvas = document.getElementById("topography");
+        const ctx = canvas.getContext("2d");
 
-    const canvas = document.getElementById("topography");
-    const ctx = canvas.getContext("2d");
+        let w, h;
 
-    let w, h;
-
-    function resize(){
-
-        w = canvas.width = window.innerWidth;
-        h = canvas.height = window.innerHeight;
-
-    }
-
-    window.addEventListener("resize", resize);
-    resize();
-
-    const particles = [];
-
-    const COUNT = 900;
-
-    const mouse = {
-        x:-1000,
-        y:-1000
-    };
-
-    window.addEventListener("mousemove",e=>{
-
-        mouse.x=e.clientX;
-        mouse.y=e.clientY;
-
-    });
-
-    class Particle{
-
-        constructor(){
-
-            this.reset();
-
+        function resize() {
+            w = canvas.width = window.innerWidth;
+            h = canvas.height = window.innerHeight;
         }
 
-        reset(){
+        window.addEventListener("resize", resize);
+        resize();
 
-            this.x=Math.random()*w;
-            this.y=Math.random()*h;
+        let t = 0;
 
-            this.life=Math.random()*300;
+        // Harmonic ratios
+        let a = 3;
+        let b = 2;
 
-        }
+        function draw() {
 
-        update(){
+            ctx.clearRect(0, 0, w, h);
 
-            const dx=this.x-mouse.x;
-            const dy=this.y-mouse.y;
+            ctx.save();
 
-            const dist=Math.sqrt(dx*dx+dy*dy);
+            ctx.translate(w / 2, h / 2);
 
-            const mouseAngle=Math.atan2(dy,dx);
-
-            const influence=Math.max(0,1-dist/250);
-
-            const angle=
-
-                Math.sin(this.y*0.004)+
-                Math.cos(this.x*0.004)+
-                influence*mouseAngle;
-
-            const length=1.2;
-
-            const nx=this.x+Math.cos(angle)*length;
-            const ny=this.y+Math.sin(angle)*length;
+            ctx.strokeStyle = "rgba(0,0,0,0.05)";
+            ctx.lineWidth = 0.8;
 
             ctx.beginPath();
 
-            ctx.moveTo(this.x,this.y);
+            const scale = Math.min(w, h) * 0.28;
 
-            ctx.lineTo(nx,ny);
+            for (let i = 0; i <= 2500; i++) {
 
-            ctx.stroke();
+                const p = (i / 2500) * Math.PI * 2;
 
-            this.x=nx;
-            this.y=ny;
+                const x =
+                    Math.sin(a * p + t) * scale;
 
-            this.life--;
+                const y =
+                    Math.sin(b * p) * scale;
 
-            if(
-                this.life<0 ||
-                this.x<0 ||
-                this.x>w ||
-                this.y<0 ||
-                this.y>h
-            ){
+                if (i === 0) {
 
-                this.reset();
+                    ctx.moveTo(x, y);
+
+                } else {
+
+                    ctx.lineTo(x, y);
+
+                }
 
             }
 
+            ctx.stroke();
+
+            ctx.restore();
+
+            // VERY slow evolution
+            t += 0.0008;
+
+            requestAnimationFrame(draw);
+
         }
 
-    }
-
-    for(let i=0;i<COUNT;i++){
-
-        particles.push(new Particle());
-
-    }
-
-    function animate(){
-
-        ctx.fillStyle="rgba(255,255,255,0.05)";
-        ctx.fillRect(0,0,w,h);
-
-        ctx.strokeStyle="rgba(0,0,0,0.08)";
-        ctx.lineWidth=1;
-
-        particles.forEach(p=>p.update());
-
-        requestAnimationFrame(animate);
-
-    }
-
-    ctx.fillStyle="white";
-    ctx.fillRect(0,0,w,h);
-
-    animate();
+        draw();
 
 
-    drawContours();
+        // Every 40 seconds choose a new harmonic ratio
 
+        const ratios = [
 
-    </script>   -->
+            [2,1],
+            [3,2],
+            [4,3],
+            [5,4],
+            [5,3],
+            [7,5],
+            [8,5]
+
+        ];
+
+        setInterval(() => {
+
+            const next =
+                ratios[Math.floor(Math.random()*ratios.length)];
+
+            a = next[0];
+            b = next[1];
+
+        }, 40000);
+    </script>
 
     </body>
 </html>
